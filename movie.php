@@ -28,10 +28,16 @@ $casting=mysqli_query($db, $query_cast);
 			#info {
 			display:block;
 			float:left;
-			margin-left:20px;
-			margin-right:30px;
+			margin-left:10px;
 			text-align:center;
-			}	
+			}
+
+			#trailer {
+			display:block;
+			float:right;
+			text-align:center;
+			}
+
 			#info_cast {
 			display:block;
 			text-align:left;
@@ -103,6 +109,29 @@ $casting=mysqli_query($db, $query_cast);
 
 				</div>
 		</div>
+
+		<div id='trailer'>
+
+			<?php 
+				if ($info['link'])
+				{
+			?>
+
+			<h1>영화 예고편 보기<h1>
+			
+			<iframe width="500" height="315" 
+			src="<?php echo $info['link'] ?>" 
+			frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+
+			<?php
+				}
+				else
+					echo "<h1>준비 중 입니다.</h1>";
+			?>
+			
+
+		</div>				
 
 	<footer>
 		<a href='home.html'>---> Click me for go to main home page.</a>
